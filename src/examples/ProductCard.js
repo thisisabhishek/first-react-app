@@ -9,7 +9,7 @@ function ProductCard(props) {
         <p>Name of Product: {props.n}</p>
         <p>Price of Product: Rs. {props.price}</p>
         <p>Product in stock: {props.inStock ? "Yes" : "No"}</p>
-        <button on
+        <button
             onClick={
                 () => buyProduct(props.n)
             }

@@ -1,13 +1,29 @@
 import './App.css'
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import Home from './pages/Home'
+import Todo from './examples/Todo'
+import ProductCard from './examples/ProductCard'
 
 const App = () => {
 
-
   return (
     <>
-      <h1>Welcome to FSD class</h1>
-      <p>Write your JSX code here and practice.</p>
-      <p>If you want to run any example, go to <b>src/index.js</b> and change the component name in the <b>render()</b> function to whichever component you want to run. Also add the import statement for that component.</p>
+      <BrowserRouter>
+
+        <div>
+          <Link to={"/"}>Home</Link> &nbsp;
+          <Link to={"/todo"}>Open Todo App</Link> &nbsp;
+          <Link to={"/products"}>Product Page</Link>
+        </div>
+        
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/todo' element={<Todo />}></Route>
+          <Route path='/products' element={<ProductCard n="iPhone 15" price="$1000" inStock={false}/>}></Route>
+          <Route path="*" element={<h1>404 Error Page</h1>}></Route>
+        </Routes>
+        
+      </BrowserRouter>
     </>
   );
 }

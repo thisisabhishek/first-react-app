@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css'
+import '../App.css'
 
 const Todo = () => {
 
@@ -25,7 +25,7 @@ const Todo = () => {
   const removeTask = (e) => {
     let removeIt = e.target.value;
     let newArr = todoList.filter(function(val) {
-      if(val.task == removeIt) {
+      if(val.task === removeIt) {
         return false;
       }
       else {
