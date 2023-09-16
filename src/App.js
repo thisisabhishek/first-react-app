@@ -6,6 +6,8 @@ import ProductCard from './examples/ProductCard'
 
 const App = () => {
 
+  // this acts as a routing component
+
   return (
     <>
       <BrowserRouter>
@@ -22,7 +24,7 @@ const App = () => {
           <Route path='/products' element={<ProductCard n="iPhone 15" price="$1000" inStock={false}/>}></Route>
           <Route path="*" element={<h1>404 Error Page</h1>}></Route>
         </Routes>
-        
+
       </BrowserRouter>
     </>
   );
